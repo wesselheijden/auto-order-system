@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WinTree Order Upload</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>WinTree Order Screenshot Uploader</h1>
+      <p>Drag &amp; drop, paste, or browse for a screenshot of your WinTree order.</p>
+    </header>
+
+    <section id="drop-zone" class="drop-zone" tabindex="0">
+      <div class="drop-zone__content">
+        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" class="drop-zone__icon">
+          <path d="M12 3a4 4 0 00-4 4v1H5a3 3 0 00-3 3v7a3 3 0 003 3h14a3 3 0 003-3v-7a3 3 0 00-3-3h-3V7a4 4 0 00-4-4zm0 2a2 2 0 012 2v1h-4V7a2 2 0 012-2zm-1 7v4h2v-4h3l-4-4-4 4h3z" />
+        </svg>
+        <p class="drop-zone__title">Drop screenshot here</p>
+        <p class="drop-zone__hint">or press <kbd>Ctrl</kbd> + <kbd>V</kbd> to paste</p>
+        <button type="button" id="file-button" class="button">Browse Files</button>
+        <input type="file" id="file-input" accept="image/*" hidden />
+      </div>
+    </section>
+
+    <section id="preview" class="preview" hidden>
+      <div class="preview__header">
+        <h2>Screenshot Preview</h2>
+        <button id="clear-button" class="button button--secondary">Remove</button>
+      </div>
+      <img id="preview-image" alt="Uploaded WinTree order screenshot" />
+      <dl class="preview__details">
+        <div>
+          <dt>Filename</dt>
+          <dd id="preview-filename">—</dd>
+        </div>
+        <div>
+          <dt>Dimensions</dt>
+          <dd id="preview-dimensions">—</dd>
+        </div>
+        <div>
+          <dt>Size</dt>
+          <dd id="preview-size">—</dd>
+        </div>
+      </dl>
+      <form id="upload-form">
+        <button type="submit" class="button button--primary">Upload to Server</button>
+        <output id="upload-status" role="status" aria-live="polite"></output>
+      </form>
+    </section>
+  </main>
+  <script src="/app.js" type="module"></script>
+</body>
+</html>
