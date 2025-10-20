@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "auto-order-system"
+version = "0.1.0"
+description = "Extract order information from WinTree screenshots and format Trello cards."
+authors = [
+  {name = "Auto Generated"}
+]
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+dependencies = [
+  "pillow>=10.0.0",
+  "pytesseract>=0.3.10",
+  "click>=8.1.7",
+  "pyyaml>=6.0"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=7.4"
+]
+
+[project.scripts]
+auto-order = "auto_order_system.cli:main"
